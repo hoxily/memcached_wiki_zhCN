@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NewOverview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>新概述</h1>
+<p>这是个什么东西？</p>
+<ul>
+<li>Memcached</li>
+<li>用更多的话来解说memcached</li>
+<li>我启用了它但是应用程序并没有跑得更快！！！</li>
+<li>这玩意儿是由什么构成的？</li>
+<li>它的设计哲学为何？</li>
+<li>Memcached是如何进化的？</li>
+</ul>
+<h2>Memcached</h2>
+<p>自由、开源、高性能、分布式的内存对象缓存系统，本质上是通用的，但是专注于通过缓解数据库负荷来加速动态WEB应用。</p>
+<p>Memcached 是一个在内存中的键-值存储器，用于存储来自数据库调用、API调用以及页面渲染得到的小块的任意类型的数据(字符串，对象)。</p>
+<p>Memcached虽然简单但是功能强大。</p>
+<p>它的简单设计加快了部署、简化了开发，并且解决了许多面临大数据缓存时遇到的问题。</p>
+<p>它的API可以在大部分流行的语言中使用。</p>
+<p>本质上它是一个简单的键-值存储器。</p>
+<h2>用更多的话来解说Memcached</h2>
+<p>见 <a href="http://memcached.org">http://memcached.org</a> about页面以获得一个简短的概述。</p>
+<h2>我启用了它但是应用程序并没跑得更快！！！</h2>
+<p>Memcached 是一个开发者工具，而不是一个“代码优化器”，也不是数据库中间件。</p>
+<p>如果你想配置你下载的或者购买的应用程序使用memcached，你最好赌一下采用他们的方式并且阅读你的应用有关如何使用memcached的文档。赌输了的话也就是这些文档没能帮到你。</p>
+<h2>这玩意儿是由什么构成的？</h2>
+<p>客户端软件，它们有着一陀可用的memcached服务器。</p>
+<p>一个基于客户端的hash算法，这算法能根据输入的“键”选择一个合适的服务器。</p>
+<p>服务端软件，它们在内部的hash表里面存储着你的键-值。</p>
+<p>服务端算法，该算法用于确定何时可以扔掉旧的数据（如果内存不够了），或者重用内存。</p>
+<h2>它的设计哲学为何？</h2>
+<p>简单的键-值存储器</p>
+<p>服务器不关心你的数据长啥模样。</p>
+<p>数据项是由键、过期时间、选项标志以及原始数据构成。</p>
+<p>它不懂里面的数据结构；</p>
+<p>你必须上传预先序列化过的数据。</p>
+<p>某些命令（incr/decr)可能会操作基础数据，但是这些命令的实现是非常单纯的。</p>
+<h2>智能的达成一半靠客户端，另一半靠服务端</h2>
+<p>“memcached 的实现” 是有部分在客户端实现，有部分在服务端实现。</p>
+<p>客户端懂得如何发送数据项到特定的服务器，当无法联系服务器时该做什么以及如何用键从服务器那里取得值。</p>
+<p>服务端懂得如何接收数据项和如何处理过期数据项。</p>
+<h2>服务器互相之间没有连接</h2>
+<p>一般上，memcached服务器并不知道对方的存在。</p>
+<p>服务器之间没有对话，没有同步，没有广播。</p>
+<p>这种相互之间联系的缺乏，意味着增加更多的服务器将会产生你所预期的更多的产生力。</p>
+<p>这个规则可能有例外，但是它们只是例外并且会被小心仔细地对待。</p>
+<h2>任何东西都是O(1)的时间复杂度</h2>
+<p>对任何能处理的，memcached命令都是O(1)的时间复杂度。</p>
+<p>基本上每次每个命令花费相同的时间去处理，并且不太可能注意到任何地方的速度下降。</p>
+<p>这得追溯到“简单的键-值存储”原理，因为你并不想处理那个被成百上千个Web服务器同时访问的缓存服务里面的数据。</p>
+<h2>遗忘数据是一个特性</h2>
+<p>默认情况下，memcached是一个LRU缓存。</p>
+<p>它被设计成经过一段时间后数据项会过期。</p>
+<p>这两种都是对付许多问题的优雅的解决方案；</p>
+<p>几分钟后数据项过期可以限制过期的数据不被返回，或者努力刷掉不用的数据来保留经常被访问的信息。</p>
+<p>这进一步地让memcached工作得极其单纯化。</p>
+<p>无“暂停”的垃圾收集确保了低延迟，空闲内存空间被懒散地回收。</p>
+<h2>缓存失效是一个难题</h2>
+<p>考虑到memcached的集中成一个集群的特性，使缓存条目无效化的工作相当烦琐。</p>
+<p>不是广播数据到所有可用的主机，而是客户端直接接手数据无效化的工作。</p>
+<p>你可能更近一步地卷入到你的需求中去，有许多注意事项，但是你坐在一条强健的基准线上。</p>
+<h2>memcached是如何进化演变的？</h2>
+<p>memcached已经演变成一个平台。</p>
+<p>其中一部分原因是缓慢的开发特性以及许多客户端。</p>
+<p>更多的在于人们发现了键-值储存的潜力。</p>
+<p>学习缓存SQL查询并且渲染模板过去常常花掉了开发者的空闲时光，但是他们渴望更多。</p>
+<h2>协议</h2>
+<p>memcached不是这个协议的唯一实现。</p>
+<p>还有有商业实体、其他的OSS项目等。</p>
+<p>memcached 客户端相当的通用，像memcached一样的集群布局有许多用途。</p>
+<p>我们将会继续看到其他的项目“说”memcached，这反过来影响作为一个文化和软件本身的memcached.</p>
+<h2>其他协议</h2>
+<p>业界正在试验许多不同的与网络化的服务进行通讯的方法。</p>
+<p>Google Protocol Buffers、Facebook Thrift、Avro 等。</p>
+<p>以后可能会有更优的方式来达到这目的。</p>
+<h2>永久性储存</h2>
+<p>许多用户希望键-值存储能在重启后仍存留值，或者超过可用的物理内存。</p>
+<p>在许多情况下memcached不是特别合适；</p>
+<p>需要昂贵的闪存来保持数据访问的良好性能。</p>
+<p>大部分情景下，如果一个服务器不可用后来给出了旧数据那么灾难将会紧随其后。</p>
+<p>用户看到陈旧的数据、功能破裂等等。</p>
+<p>然而随着SSD价格的下降，这将是一个有可能扩展的领域。</p>
+<h2>存储引擎</h2>
+<p>一般来说，作为服务的存储引擎是memcached的未来。</p>
+<p>除了我们可敬的切块算法，还有其他的内存后端可用于试验。</p>
+<p>tcmalloc、jemalloc、CPU-local切块、hierachies等。</p>
+<p>存储引擎促进了提升速度与内存效率的试验，也促进了专业服务支持memcached协议。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

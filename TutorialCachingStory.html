@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TutorialCachingStory</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>学习Memcached的一次冒险</h1>
+<p>两位中学时期的好朋友，李雷和韩梅梅，开始了他们的创业之旅。他们一起开始做网站。是那种经典的Web服务器外加数据库结构的网站。来自互联网的每个的用户通过对Web服务器请求他们所需要的页面，Web服务器就找数据库要构建这些页面所需要的数据。</p>
+<p>李雷负责编程，韩梅梅负责维护管理Web服务器和数据库。</p>
+<p>一天，韩梅梅发现他们的数据库生病了! 由于负荷过重而上吐下泻！韩梅梅发现它的平均负载有20! 李雷就问韩梅梅: “啊，那我们咋办哟!” 韩梅梅说: “我听说memcached这种技术不错，它在livejournal中发挥了很大作用呢!” “好吧，那我们也试试看吧!” 李雷回答到。</p>
+<p>韩梅梅看了看她的6台Web服务器，分析了一阵，然后她决定用其中的3台来运行这个memcached服务器。她把每台Web服务器都额外添加了1G的内存 – 也就是说，现在他们有3个memcached实例, 每个能存1G的数据。</p>
+<p>搞定之后，李雷和韩梅梅静坐在一旁，看着他们刚架设好的memcached 服务器。</p>
+<p>然后呢？ “它一点动静都没有啊，这些memcached没有和其他任何程序通信啊，也没有任何有用的数据, 更惨的是，现在数据库的负载到了25了!”</p>
+<p>无畏的李雷拿起了memcached客户端使用手册,对着韩梅梅深情配置好的memcached服务器说，“有什么好怕的!”他说. “我想到一个点子了” 他把那3台memcached服务器的ip地址和端口添加到一个php 数组中:</p>
+<pre><code>$MEMCACHE_SERVERS = array(
+&quot;10.1.1.1&quot;, //web1
+&quot;10.1.1.2&quot;, //web2
+&quot;10.1.1.3&quot;, //web3 );
+</code></pre>
+
+<p>然后他创建了一个叫'$memcache'的对象</p>
+<pre><code>$memcache = new Memcache();
+foreach($MEMCACHE_SERVERS as $server){     
+    $memcache-&gt;addServer ( $server );
+}
+</code></pre>
+
+<p>李雷继续想啊想,想啊想, 突然灵机一动: “对了! 我记得有个页面经常执行<code>SELECT * FROM hugetable WHERE timestamp &gt; lastweek ORDER BY timestamp ASC LIMIT 50000;</code> 这个查询要花费5秒的时间呢! 我来把他放到memcache里面吧”, 结果他就把这些查询放进'$memcache'对象中, 他的代码询问:</p>
+<p>Select语句所得的结果在我的memcache里面吗? 如果不在, 就执行查询并把结果放到memcache里:</p>
+<pre><code>$huge_data_for_frong_page = $memcache-&gt;get(&quot;huge_data_for_frong_page&quot;);
+if ($huge_data_for_frong_page === false) {
+    $huge_data_for_frong_page = array();
+    $sql = &quot;SELECT * FROM hugetable WHERE timestamp &gt; lastweek
+                            ORDER BY timestamp ASC LIMIT 50000&quot;;     
+    $res = mysql_query($sql, $mysql_connection);
+    while($rec = mysql_fetch_assoc($res)) {
+         $huge_data_for_frong_page[] = $rec;
+    }     
+// cache for 10 minutes
+$memcache-&gt;set(&quot;huge_data_for_frong_page&quot;, $huge_data_for_frong_page, 600); }
+// use $huge_data_for_frong_page how you please
+</code></pre>
+
+<p>李雷提交了他的代码. 韩梅梅胆战心惊~ 呼~~ 数据库负载下降到10了! 网站速度良好!</p>
+<p>不过，韩梅梅就纳闷了，怎么一回事啊? 我用cacti看到所有的数据请求都是去了其中一个memcached服务器,可是我明明建立了3个啊? 韩梅梅很快学会了用ASCII协议telnet一个个登录她设立的memcached 服务器进行查询:</p>
+<p>喂喂, huge_data_for_front_page, 你在哪里?<br />
+第一个memcached 没反应<br />
+第二个memcached也没反应<br />
+第三个memcached, 吐出来一大堆的Q$%@#$&amp;%*($^@#^#$WY%@^N@$%<br />
+数据! 只有第三台memcached缓存了李雷的数据!</p>
+<p>搞不懂, 韩梅梅只好在邮件列表里面去询问, 她得到的回答惊人的一致, “这是因为memcached是一个分布式的缓存系统!” 但是这又是什么意思呢? 韩梅梅还是不是很懂,她走到李雷面前,让他缓存更多的数据 “让我们静观其变, 我们一定能搞懂它的!”</p>
+<p>“好吧, 我手头上还有一个很慢的查询语句, 而且每秒还需要执行100次, 或许我们可以把它也缓存起来” 李雷二话不说就去编程了, 就像之前那样, 数据库的负载下降到8了!</p>
+<p>李雷继续把越来越多的数据缓存起来,他还使用了在FAQ学到的新技术! 与此同时, 数据库的负载继续下降: 7,5,3,2,1 !</p>
+<p>“很好”韩梅梅说, “让我们继续” 她继续观察系统的图表, 三台memcached都运行起来了! 他们都在处理请求!
+韩梅梅继续在三台memcached上查询李雷的输入数据,但每次其结果都只能在一台memcached里找到. 为什么要这样呢?她不解,奇怪了,把数据都在三台memcached上都存着难道不是更好么? &quot;等一下&quot;韩梅梅想,我给每台memcached机器1G的内存, 也就是说这样他们一共可以缓存3G的数据库数据,而不只是1G, 太棒了!</p>
+<p>&quot;mmm...,不过好像还是有问题, 其中一台memcached的机器已经过时了, 需要更新升级, 这样的话我就必须把这台机器给关了,这样一来我心爱的memcached会咋样啊~?&quot; &quot;那...让我试试看!&quot; 韩梅梅二话不说,关掉了其中一台机器,然后她小心翼翼地观察系统曲线变化... &quot;糟了,数据库的负载又直线上升了! 1...现在是2了,不过还算可以接受吧.
+其余的2台memcached都还工作正常。不算太糟糕,只是多了一些无法被缓存的数据。&quot; 韩梅梅试验完后, 把原先的机器重启, 几分钟后, 数据库的负载又恢复到1了。</p>
+<p>&quot;缓存又自动恢复了! 我懂了，如果其中有部分机器下线了，只是说会有部分应该缓存的数据不存在而已，没什么大不了的，偶稀饭!&quot;</p>
+<p>就这样，李雷和韩梅梅继续架设网站，继续缓存. 当他们遇到了什么问题了,他们就在邮件列表,或者FAQ来寻求答案.他们继续监视着数据库负载的图表，从此永远快乐地生活在一起。</p>
+<p>Author: Dormando via IRC. Edited by Brian Moon for fun. Further fun editing by Emufarmers.
+<br />
+This story has been illustrated by the online comic <a href="http://toblender.com/tag/memcached/">TOBlender.com</a>.
+<br />
+<a href="http://newwaylw.blogspot.com/2011/11/blog-post_16.html">Chinese translation</a> by Wei Liu.</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
